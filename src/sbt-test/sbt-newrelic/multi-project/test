@@ -1,0 +1,12 @@
+> universal:stage
+$ exists p1/target/universal/stage/newrelic/newrelic.yml
+$ exists p1/target/universal/stage/newrelic/newrelic.jar
+$ exec grep -q "addJava .*newrelic.jar" p1/target/universal/stage/bin/p1
+$ exec grep -q "app_name: p1" p1/target/universal/stage/newrelic/newrelic.yml
+$ exists p2/target/universal/stage/newrelic/newrelic.yml
+$ exists p2/target/universal/stage/newrelic/newrelic.jar
+$ exec grep -q "addJava .*newrelic.jar" p2/target/universal/stage/bin/p2
+$ exec grep -q "app_name: p2" p2/target/universal/stage/newrelic/newrelic.yml
+$ absent p3/target/universal/stage/newrelic/newrelic.yml
+$ absent p3/target/universal/stage/newrelic/newrelic.jar
+$ absent p3/target/universal/stage/bin/p3
