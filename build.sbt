@@ -18,6 +18,8 @@ scriptedLaunchOpts := { scriptedLaunchOpts.value ++
 
 scriptedBufferLog := false
 
+scalariformSettings
+
 versionWithGit
 
 git.baseVersion := "0.0.4"
