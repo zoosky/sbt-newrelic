@@ -115,6 +115,10 @@ common: &default_settings
   # Default is false.
   capture_messaging_params: false
 
+  # Tells newrelic api to scan for the @Trace annotation in your code
+  # And instrument it for custom tracing
+  enable_custom_tracing: ${{custom_tracing}}
+
   # Tells transaction tracer and error collector to not to collect
   # specific message properties. 
   #ignored_messaging_params: userid, authtoken

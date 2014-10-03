@@ -16,6 +16,7 @@ object NewRelic extends AutoPlugin {
     val newrelicConfig = taskKey[File]("Generates a New Relic configuration file")
     val newrelicConfigTemplate = settingKey[java.net.URL]("Location of New Relic configuration template")
     val newrelicLicenseKey = settingKey[Option[String]]("License Key for New Relic account")
+    val newrelicCustomTracing = settingKey[Boolean]("Option to scan and instrument @Trace annotations")
     val newrelicTemplateReplacements = settingKey[Seq[(String, String)]]("Replacements for New Relic configuration template")
   }
 
@@ -31,9 +32,11 @@ object NewRelic extends AutoPlugin {
     newrelicConfig := makeNewRelicConfig((target in Universal).value, newrelicConfigTemplate.value, newrelicTemplateReplacements.value),
     newrelicConfigTemplate := getNewrelicConfigTemplate,
     newrelicLicenseKey := None,
+    newrelicCustomTracing := false,
     newrelicTemplateReplacements := Seq(
       "app_name" → newrelicAppName.value,
-      "license_key" → newrelicLicenseKey.value.getOrElse("")
+      "license_key" → newrelicLicenseKey.value.getOrElse(""),
+      "custom_tracing" → newrelicCustomTracing.value.toString
     ),
     libraryDependencies += "com.newrelic.agent.java" % "newrelic-agent" % newrelicVersion.value % nrConfig,
     mappings in Universal ++= Seq(
