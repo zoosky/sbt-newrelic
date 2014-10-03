@@ -23,3 +23,13 @@ scalariformSettings
 versionWithGit
 
 git.baseVersion := "0.0.4"
+
+publishMavenStyle := true
+
+bintraySettings
+
+bintrayPublishSettings
+
+bintray.Keys.bintrayOrganization in bintray.Keys.bintray := Some("giltgroupe")
+
+licenses += ("MIT", url("http://opensource.org/licenses/MIT"))

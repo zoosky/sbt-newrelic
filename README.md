@@ -19,6 +19,11 @@ Installation
 Add the following to your `project/plugins.sbt` file:
 
 ```scala
+resolvers += Resolver.url(
+  "giltgroupe-sbt-plugin-releases",
+    url("https://dl.bintray.com/content/giltgroupe/sbt-plugin-releases"))(
+        Resolver.ivyStylePatterns)
+
 addSbtPlugin("com.gilt.sbt" % "sbt-newrelic" % "0.0.3")
 ```
 
