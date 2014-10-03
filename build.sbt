@@ -19,3 +19,5 @@ scriptedLaunchOpts := { scriptedLaunchOpts.value ++
 scriptedBufferLog := false
 
 versionWithGit
+
+git.baseVersion := "0.0.4"
