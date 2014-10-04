@@ -15,7 +15,7 @@ scalacOptions ++= List(
   "-encoding", "UTF-8"
 )
 
-addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "0.7.4")
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "0.7.4" % "provided")
 
 ScriptedPlugin.scriptedSettings
 
