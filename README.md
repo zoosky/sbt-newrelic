@@ -14,16 +14,17 @@ The following is a list of useful links related to newrelic:
 * [New Relic Java Agent config file template](https://docs.newrelic.com/sites/default/files/atoms/files/newrelic.yml)
 * [New Relic Java Agent Configuration](https://docs.newrelic.com/docs/agents/java-agent/configuration/java-agent-configuration-config-file)
 
+Prerequisites
+-------------
+The plugin assumes that sbt-native-packager 0.7.x or 0.8.x has been included in your SBT build configuration, and its settings have been
+initialized. This can by done by adding the plugin following instructions at http://www.scala-sbt.org/sbt-native-packager/ or by adding
+another plugin that includes and initializes it (e.g. the SBT plugin for Play 2.3.x).
+
 Installation
 ------------
 Add the following to your `project/plugins.sbt` file:
 
 ```scala
-resolvers += Resolver.url(
-  "giltgroupe-sbt-plugin-releases",
-    url("https://dl.bintray.com/content/giltgroupe/sbt-plugin-releases"))(
-        Resolver.ivyStylePatterns)
-
 addSbtPlugin("com.gilt.sbt" % "sbt-newrelic" % "0.0.3")
 ```
 
