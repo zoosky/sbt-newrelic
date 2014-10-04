@@ -31,12 +31,14 @@ versionWithGit
 
 git.baseVersion := "0.0.4"
 
-publishMavenStyle := true
+publishMavenStyle := false
 
 bintraySettings
 
 bintrayPublishSettings
 
 bintray.Keys.bintrayOrganization in bintray.Keys.bintray := Some("giltgroupe")
+
+bintray.Keys.packageLabels in bintray.Keys.bintray := Seq("sbt", "newrelic", "sbt-native-packager")
 
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
