@@ -6,7 +6,14 @@ name := "sbt-newrelic"
 
 sbtPlugin := true
 
-scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
+scalacOptions ++= List(
+  "-unchecked",
+  "-deprecation",
+  "-Xlint",
+  "-language:_",
+  "-target:jvm-1.6",
+  "-encoding", "UTF-8"
+)
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "0.7.4")
 
