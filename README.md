@@ -53,6 +53,12 @@ newrelicLicenseKey := Some("1234567890abcdef")
 
 An alternative approach is to pass the license key to your application via the `NEW_RELIC_LICENSE_KEY` environment variable.
 
+To enable custom tracing, add the following to your `build.sbt` file:
+
+```scala
+newrelicCustomTracing := true
+```
+
 To provide a static `newrelic.yml` file instead of a generated file, place the
 file somewhere (e.g. `resourceDirectory`, which is `conf/` by default for Play
 applications, or `src/main/resources` for many other builds), and refer to it
