@@ -11,4 +11,5 @@ $ exec grep -q "enable_custom_tracing: false" target/universal/stage/newrelic/ne
 $ exec grep -q "license_key: 'abc'" target/universal/stage/newrelic/newrelic.yml
 
 > set newrelicCustomTracing := true
+> universal:stage
 $ exec grep -q "enable_custom_tracing: true" target/universal/stage/newrelic/newrelic.yml
